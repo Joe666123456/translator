@@ -1,0 +1,32 @@
+<h1>FIT2095, Translate App</h1>
+<hr>
+<form class="m-4">
+  <div class="form-group">
+    <label> Text in English </label>
+    <input class="form-control" type = "text" class="form-control" 
+    name = "name" placeholder="Your Text" [(ngModel)]="messageText" /><br>
+  </div>
+  <div class="form-group">
+      <label> Select Language </label>
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="target">
+        <option value="fr">fr</option>
+        <option value="zh">zh</option>
+        <option value="hi">hi</option>
+        <option value="ar">ar</option>
+      </select>
+  </div>
+  <br>
+  <button (click) ="sendText()" class="btn btn-success">Submit</button>
+</form> 
+
+<div *ngFor="let card of cards; let i = index">
+    <div class="card bg-success text-white" style="width: 18rem; margin-left: 24px;">
+      <div class="card-body">
+      <h5 class="card-title">From English to {{card.target}}</h5>
+      <hr>
+      <p class="card-text">Original: {{card.original}}</p>
+      <p class="card-text">Translated: {{card.translated}}</p>
+      </div>
+    </div>
+<br>
+</div>
